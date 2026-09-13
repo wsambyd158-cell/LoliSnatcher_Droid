@@ -14,8 +14,9 @@ jobs:
           java-version: '17'
       - uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.27.4'
           channel: 'stable'
+          cache: false
+      - run: flutter --version
       - run: flutter pub get
       - run: flutter pub run build_runner build --delete-conflicting-outputs
       - run: flutter build apk --release
